@@ -1,0 +1,141 @@
+id,question,category,answer_format,n_matches,entity_match
+1,What is the average rent price of all buildings that are located within 100 meters from the closest church in 1740?,spatial,a single number,1,0
+2,What is the average building area of all buildings that are located within 100 meters from the closest church in 1808?,spatial,a single number,1,0
+3,Which square has the highest density of tenants within 100 meters in 1740?,spatial,a single entity name,1,0
+4,Which square has the highest density of buildings within 100 meters in 1808?,spatial,a single entity name,1,0
+5,Is the building rent price correlated with the distance from the nearest square in 1740?,spatial,yes or no,1,0
+6,Is the building area correlated with the distance from the nearest square in 1808?,spatial,yes or no,1,0
+7,In which parish the houses are the most densely located in 1740?,spatial,a single entity name,1,1
+8,In which district the houses are the most densely located in 1808?,spatial,a single entity name,1,1
+9,In how many parishes there are more than 10 houses in 1740?,spatial,a single number,1,1
+10,In how many parishes there are more than 1 school in 1740?,spatial,a single number,1,1
+11,In how many parishes there are less than 10 shops in 1740?,spatial,a single number,1,1
+12,In how many districts there are more than 10 houses in 1808?,spatial,a single number,1,1
+13,In how many districts there are more than 1 school in 1808?,spatial,a single number,1,1
+14,In how many districts there are less than 10 shops in 1808?,spatial,a single number,1,1
+15,Are low-rent buildings with less than average rent price clustered in specific areas in 1740?,spatial,yes or no,0,0
+16,Are small buildings with smaller than average building size clustered in specific areas in 1808?,spatial,yes or no,0,0
+17,How many people live within 100 meters from the closest church in 1740?,spatial,a single number,1,0
+18,How many people live within 100 meters from the closest church in 1808?,spatial,a single number,1,0
+19,"On average, how much more expensive are houses near the squares within 100 meters compared to those further away in 1740?",spatial,a single number,2,1
+20,"On average, how much more expensive are workshops near the squares within 100 meters compared to those further away in 1740?",spatial,a single number,2,1
+21,"On average, how much more expensive are schools near the squares within 100 meters compared to those further away in 1740?",spatial,a single number,2,1
+22,"On average, how much bigger are houses near the squares within 100 meters compared to those further away in 1808?",spatial,a single number,2,1
+23,"On average, how much bigger are workshops near the squares within 100 meters compared to those further away in 1808?",spatial,a single number,2,1
+24,"On average, how much bigger are schools near the squares within 100 meters compared to those further away in 1808?",spatial,a single number,2,1
+25,"On average, how much more expensive are houses near the churches within 100 meters compared to those further away in 1740?",spatial,a single number,2,1
+26,"On average, how much more expensive are workshops near the churches within 100 meters compared to those further away in 1740?",spatial,a single number,2,1
+27,"On average, how much more expensive are schools near the churches within 100 meters compared to those further away in 1740?",spatial,a single number,2,1
+28,"On average, how much bigger are houses near the churches within 100 meters compared to those further away in 1808?",spatial,a single number,2,1
+29,"On average, how much bigger are workshops near the churches within 100 meters compared to those further away in 1808?",spatial,a single number,2,1
+30,"On average, how much bigger are schools near the churches within 100 meters compared to those further away in 1808?",spatial,a single number,2,1
+31,How many buildings are located around the square of San Marco within 100 meters in 1740?,spatial,a single number,1,1
+32,How many buildings are located around the church of Saint Paul within 100 meters in 1740?,spatial,a single number,1,1
+33,How many houses are located around the church of Saint Paul within 100 meters in 1740?,spatial,a single number,2,1
+34,How many buildings are located around the square of San Marco within 100 meters in 1808?,spatial,a single number,1,1
+35,How many buildings are located around the church of Saint Paul within 100 meters in 1808?,spatial,a single number,1,1
+36,How many houses are located around the square of San Marco within 100 meters in 1808?,spatial,a single number,2,1
+37,Are the buildings located within 100 meters from San Marco more expensive than the buildings located within 100 meters from other squares in 1740?,spatial,yes or no,2,1
+38,Are the buildings located within 100 meters from San Marco bigger than the buildings located within 100 meters from other squares in 1808?,spatial,yes or no,2,1
+39,On average how far do people live from the squares in 1740?,spatial,a single number,1,0
+40,On average how far do people live from the squares in 1808?,spatial,a single number,1,0
+41,Which neighborhood has the highest density of different families in 1740?,spatial,a single entity name,0,0
+42,Which neighborhood has the highest density of different families in 1808?,spatial,a single entity name,0,0
+43,How many churches does each parish have on average in 1740?,spatial,a single number,1,0
+44,How many churches does each district have on average in 1808?,spatial,a single number,1,0
+45,Is there a significant difference in the rent prices for buildings within 100 meters from the closest churches versus from squares in 1740?,spatial,yes or no,2,0
+46,Is there a significant difference in the area of buildings within 100 meters from the closest churches versus from squares in 1808?,spatial,yes or no,2,0
+47,Which neighborhood contains the buildings with the highest rent price on average in 1740?,spatial,a single entity name,0,0
+48,Which neighborhood contains the buildings with the largest area on average in 1808?,spatial,a single entity name,0,0
+49,What is the name of the square that is the most densely populated with people within 100 meters in 1740?,spatial,a single entity name,1,0
+50,What is the name of the square that is the most densely populated with people within 100 meters in 1808?,spatial,a single entity name,1,0
+51,How many buildings are there per parish on average in 1740?,spatial,a single number,0,0
+52,How many buildings are there per district on average in 1808?,spatial,a single number,0,0
+53,What is the parish with the highest rent price in 1740?,spatial,a single entity name,0,0
+54,What is the district with the largest buildings in 1808?,spatial,a single entity name,0,0
+55,"Among all the parishes, what is the highest density of buildings with multiple functions in 1740?",spatial,a single number,0,0
+56,"Among all the districts, what is the highest density of buildings with multiple functions in 1808?",spatial,a single number,0,0
+57,What is the average rent price difference between the parishes with the highest and the lowest rent prices in 1740?,spatial,a single number,0,0
+58,What is the average size difference between the districts with the largest and the smalles buildings in 1808?,spatial,a single number,0,0
+59,Are there any parishes with more than 5 buildings owned by a single family in 1740?,spatial,yes or no,0,0
+60,Are there any districts with more than 5 buildings owned by a single family in 1808?,spatial,yes or no,0,0
+61,What is the most common function of buildings that are within 100 meters from the closest square in 1740?,function,a single entity name,1,0
+62,What is the most common function of buildings that are within 100 meters from the closest square in 1808?,function,a single entity name,1,0
+63,Which square is surrounded with the buildings with the most diverse functions within the radius of 100 meters in 1740?,function,a single entity name,1,0
+64,Which square is surrounded with the buildings with the most diverse functions within the radius of 100 meters in 1808?,function,a single entity name,1,0
+65,Are residential buildings more closely located to the squares than commercial buildings in 1740?,function,yes or no,3,1
+66,Are residential buildings more closely located to the squares than commercial buildings in 1808?,function,yes or no,3,1
+67,What is the average distance between workshops and their nearest square in 1740?,function,a single number,2,1
+68,What is the average distance between houses and their nearest square in 1740?,function,a single number,2,1
+69,What is the average distance between schools and their nearest church in 1740?,function,a single number,2,1
+70,What is the average distance between workshops and their nearest square in 1808?,function,a single number,2,1
+71,What is the average distance between houses and their nearest square in 1808?,function,a single number,2,1
+72,What is the average distance between schools and their nearest church in 1808?,function,a single number,2,1
+73,"On average, are buildings with multiple functions more expensive than the ones with a single function in 1740?",function,yes or no,0,0
+74,"On average, are buildings with multiple functions larger than the ones with a single function in 1808?",function,yes or no,0,0
+75,What is the most common combination of functions of multi-functional buildings in 1740?,function,a single entity name,0,0
+76,What is the most common combination of functions of multi-functional buildings in 1808?,function,a single entity name,0,0
+77,Is there a correlation between building functions and their proximity to the churches in 1740?,function,yes or no,1,0
+78,Is there a correlation between building functions and their proximity to the churches in 1808?,function,yes or no,1,0
+79,Which church is surrounded by the most diverse set of building functions in 1740?,function,a single entity name,1,0
+80,Which church is surrounded by the most diverse set of building functions in 1808?,function,a single entity name,1,0
+81,Is there a correlation between the number of building functions and the rent price in 1740?,function,yes or no,0,0
+82,Is there a correlation between the number of building functions and the size of the building in 1808?,function,yes or no,0,0
+83,Which square has the largest number of commercial buildings within 100 meters in the dataset in 1740?,function,a single entity name,2,0
+84,Which square has the largest number of commercial buildings within 100 meters in the dataset in 1808?,function,a single entity name,2,0
+85,Which family owns the most number of buildings in 1740?,personal,a single entity name,0,0
+86,How many buildings does the family of Michiel own in 1740?,personal,a single number,1,1
+87,How many buildings does the Zuanne Don own in 1740?,personal,a single number,2,1
+88,Which family owns the most number of buildings in 1808?,personal,a single entity name,0,0
+89,How many buildings does the family of Michiel own in 1808?,personal,a single number,1,1
+90,How many buildings does the Zuanne Francesco own in 1740?,personal,a single number,2,1
+91,Is there any correlation between the family name and the profession in 1740?,personal,yes or no,0,0
+92,Which family owns the most number of buildings per parish on average in 1740?,personal,a single entity name,0,0
+93,Which family owns the most number of buildings per district on average in 1740?,personal,a single entity name,0,0
+94,How many lawyers are there in Venice in 1740?,personal,a single number,1,1
+95,How many cook are there in Venice in 1740?,personal,a single number,1,1
+96,How many medical doctors are there in Venice in 1740?,personal,a single number,1,1
+97,What does Carlo Alberegno do in 1740?,personal,a single entity name,2,1
+98,How many merchants are there in Venice in 1740?,personal,a single number,1,1
+99,In which parish do prosecutors inhabit the most in 1740?,personal,a single entity name,1,1
+100,In which parish do lawyers own the most number of buildings in 1740?,personal,a single entity name,1,1
+101,How much of do doctors earch from rent on average in 1740?,personal,a single number,1,1
+102,Who is the richest person in term of how much they earn from rent in 1740?,personal,a single number,0,0
+103,Is there a significant difference in rent prices based on the profession of the building owner in 1740?,personal,yes or no,0,0
+104,What is the most common building functions of buildings owned by the same family in 1740?,personal,a single entity name,0,0
+105,What is the most common building functions of buildings owned by the same family in 1808?,personal,a single entity name,0,0
+106,What type of building is owned the most by lawyers in 1740?,personal,a single entity name,1,1
+107,What type of building is owned the most by doctors in 1740?,personal,a single entity name,1,1
+108,How many people were relocated by more than 1km from 1740 to 1808?,comparison,a single number,0,0
+109,What is the average distance moved by individuals who owned buildings in both 1740 and 1808?,comparison,a single number,0,0
+110,How many more buildings does the family of Michiel own in 1808 compared to 1740?,comparison,a single number,1,1
+111,Which profession exhibited the highest rate of relocation compared to others from 1740 to 1808?,comparison,a single entity name,0,0
+112,How many families own more buildings in 1808 than what they owned in 1740?,comparison,a single number,0,0
+113,How many families relocated their buildings closer to squares from 1740 to 1808?,comparison,a single number,1,0
+114,How many families relocated their buildings further away from squares from 1740 to 1808?,comparison,a single number,1,0
+115,How many more buildings are located within 100 meters from the closest squares in 1808 compared to 1740?,comparison,a single number,1,0
+116,How many less buildings are located within 100 meters from the closest  squares in 1808 compared to 1740?,comparison,a single number,1,0
+117,How many families present in Venice in 1740 still exist in 1808?,comparison,a single number,0,0
+118,Does the family of Michiel exist in both periods?,comparison,yes or no,2,1
+119,How many more buildings does the family of Michiel own in 1808 compared to 1740?,comparison,a single number,2,1
+120,Does the family of Michiel exist in both periods?,comparison,yes or no,1,1
+121,Does the family of Michiel exist in both periods?,comparison,yes or no,1,1
+122,Does the family of Michiel exist in both periods?,comparison,yes or no,1,1
+123,Which family increased the number of buildings they owned the most from 1740 to 1808?,comparison,a single entity name,0,0
+124,How many building changed from residential to commercial use between 1740 and 1808?,comparison,a single number,4,1
+125,Do all buildings owned by the same people in both periods still serve the same function?,comparison,yes or no,0,0
+126,How many buildings retained the same function across the two time periods?,comparison,a single number,0,0
+127,How many new families appeared in Venice in 1808 that were not present in 1740?,comparison,a single number,0,0
+128,Is there any decrease in the number of buildings held by a family on average from 1740 to 1808?,comparison,yes or no,0,0
+129,Are there any families who moved closer to the churches in general from 1740 to 1808?,comparison,yes or no,1,0
+130,Are there any families who moved further away from the churches in general from 1740 to 1808?,comparison,yes or no,1,0
+131,How many families who owned buildings in both 1740 and 1808 changed the type of buildings they owned?,comparison,a single number,0,0
+132,Did any families transition from being tenants in 1740 to building owners in 1808?,comparison,a single entity name,0,0
+133,Have the squares with the most number of commercial buildings within 100 meters changed from 1740 to 1808?,comparison,yes or no,3,0
+134,How many buildings are located within 100 meters from the closest church in 1808 compared to 1740?,comparison,a single number,1,0
+135,How many more buildings are located within 100 meters from the square of San Marco in 1808 compared to 1740?,comparison,a single number,1,0
+136,What are the names of the most densely populated squares with the most number of buildings within 100 meters in both periods 1740 and 1808?,comparison,a single entity name,1,0
+137,Which type of a building have been moved further away from the churches the most from 1740 to 1808?,comparison,a single entity name,1,0
+138,Which type of a building have been moved closer to the churches the most from 1740 to 1808?,comparison,a single entity name,1,0
+139,Did the number of buildings with more than one function increase over time from 1740 to 1808?,comparison,yes or no,0,0
+140,Did the family of Michiel loose any of their buildings from 1740 to 1808?,comparison,yes or no,1,1

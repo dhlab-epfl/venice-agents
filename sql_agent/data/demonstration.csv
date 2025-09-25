@@ -1,0 +1,395 @@
+question,query
+"How many properties are there in ""la calle vicina al campiel dal panizza in arzere""?","SELECT COUNT(catastici.Property_ID) 
+FROM catastici 
+WHERE catastici.Property_Location = 'la calle vicina al campiel dal panizza in arzere';"
+"What is the lowest income of ""francesco"" ""giustinian""?","SELECT MIN(catastici.Rent_Income) 
+FROM catastici 
+WHERE catastici.Owner_First_Name = 'francesco' AND catastici.Owner_Family_Name = 'giustinian';"
+List all the types of properties in the dataset.,"SELECT DISTINCT catastici.Property_Type 
+FROM catastici;"
+"Who are the owners of the properties located at ""corte de cà celsi""?","SELECT DISTINCT catastici.Owner_First_Name, catastici.Owner_Family_Name
+FROM catastici
+WHERE catastici.Property_Location = 'corte de cà celsi';"
+"What are the types of properties owned by ""francesco"" ""patarol""?","SELECT DISTINCT catastici.Property_Type
+FROM catastici
+WHERE catastici.Owner_First_Name = 'francesco' AND catastici.Owner_Family_Name = 'patarol';"
+Which properties have a rent income higher than 50 ducati?,"SELECT catastici.Owner_First_Name, catastici.Owner_Family_Name, catastici.Property_Type, catastici.Rent_Income, catastici.Property_Location 
+FROM catastici 
+WHERE catastici.Rent_Income > 50;"
+Which property type generates the highest total rent income?,"SELECT catastici.Property_Type, SUM(catastici.Rent_Income) AS Total_Rent_Income
+FROM catastici
+GROUP BY catastici.Property_Type
+ORDER BY Total_Rent_Income DESC
+LIMIT 1;"
+"What are the property types located in ""teren alli gesouiti""?","SELECT DISTINCT catastici.Property_Type
+FROM catastici
+WHERE catastici.Property_Location = 'teren alli gesouiti';"
+"Which people own a ""bottega"" in ""fondamenta in fazza la beccaria""?","SELECT DISTINCT catastici.Owner_First_Name, catastici.Owner_Family_Name 
+FROM catastici 
+WHERE catastici.Property_Type = 'bottega' AND catastici.Property_Location = 'fondamenta in fazza la beccaria';"
+What is the lowest rent income in the dataset?,"SELECT MIN(catastici.Rent_Income) AS Lowest_Rent_Income
+FROM catastici;"
+"Are there any properties in ""calle della malvasia"" with the type of ""casa""?","SELECT catastici.Property_ID, catastici.Rent_Income 
+FROM catastici 
+WHERE catastici.Property_Location = 'calle della malvasia' AND catastici.Property_Type = 'casa'
+limit 1;"
+"Who are the owners of ""magazen due"" type properties?","SELECT DISTINCT catastici.Owner_First_Name, catastici.Owner_Family_Name
+FROM catastici
+WHERE catastici.Property_Type = 'magazen due';"
+"How many ""casa"" are there in the dataset?","SELECT COUNT(catastici.Property_ID) 
+FROM catastici 
+WHERE catastici.Property_Type = 'casa';"
+What is the highest rent income in the dataset?,"SELECT MAX(catastici.Rent_Income) AS max_rent_income
+FROM catastici;"
+"Does ""iseppo maria"" ""gallo"" own a property in ""campiello della fraterna""?","SELECT catastici.Property_ID
+FROM catastici
+WHERE catastici.Owner_First_Name = 'iseppo maria' AND catastici.Owner_Family_Name = 'gallo' AND catastici.Property_Location = 'campiello della fraterna'
+limit 1;"
+"What types of properties does ""marin"" ""bernardo"" have?","SELECT DISTINCT catastici.Property_Type
+FROM catastici
+WHERE catastici.Owner_First_Name = 'marin' AND catastici.Owner_Family_Name = 'bernardo';"
+What is the total number of properties listed in the dataset?,"SELECT COUNT(catastici.Property_ID) AS Total_Properties
+FROM catastici;"
+Which owner has a property with the highest rent income from a single property?,"SELECT catastici.Owner_First_Name, catastici.Owner_Family_Name, MAX(catastici.Rent_Income) AS ""Max_Rent_Income""
+FROM catastici;"
+How many different locations are the properties located in?,"SELECT COUNT(DISTINCT catastici.Property_Location) AS num_locations
+FROM catastici;"
+"Which families own a property in ""rio san baseggio""?","SELECT DISTINCT catastici.Owner_Family_Name 
+FROM catastici 
+WHERE catastici.Property_Location = 'rio san baseggio';"
+Is there any property with the rent income of 120 ducati?,"SELECT catastici.Property_ID 
+FROM catastici 
+WHERE catastici.Rent_Income = 120
+Limit 1;"
+"How many properties are listed as ""casa""?","SELECT COUNT(catastici.Property_ID) 
+FROM catastici 
+WHERE catastici.Property_Type = 'casa';"
+Who owns the most properties in the dataset?,"SELECT catastici.Owner_First_Name, catastici.Owner_Family_Name, COUNT(catastici.Property_ID) AS property_count
+FROM catastici
+GROUP BY catastici.Owner_First_Name, catastici.Owner_Family_Name
+ORDER BY property_count DESC
+LIMIT 1;"
+"List all unique property types owned by ""marin"" ""bernardo"".","SELECT DISTINCT catastici.Property_Type
+FROM catastici
+WHERE catastici.Owner_First_Name = 'marin' AND catastici.Owner_Family_Name = 'bernardo';"
+"What is the average rent income for all properties in ""al ponte di san provolo""?","SELECT AVG(catastici.Rent_Income) 
+FROM catastici 
+WHERE catastici.Property_Location = 'al ponte di san provolo';"
+Are there any properties with the rent income lower than 60 ducati?,"SELECT catastici.Property_ID 
+FROM catastici 
+WHERE catastici.Rent_Income < 60
+Limit 1;"
+How many properties does each owner have?,"SELECT catastici.Owner_First_Name, catastici.Owner_Family_Name, COUNT(catastici.Property_ID) AS num_properties
+FROM catastici
+GROUP BY catastici.Owner_First_Name, catastici.Owner_Family_Name;"
+List the names of all property owners.,"SELECT DISTINCT catastici.Owner_First_Name, catastici.Owner_Family_Name 
+FROM catastici"
+"How many properties are there with the type of ""casa""?","SELECT COUNT(catastici.Property_ID) 
+FROM catastici 
+WHERE catastici.Property_Type = 'casa';"
+"Which property types are present in ""calle di santa cattarina principia alle fondamenta nove""?","SELECT DISTINCT catastici.Property_Type 
+FROM catastici 
+WHERE catastici.Property_Location = 'calle di santa cattarina principia alle fondamenta nove';"
+"What is the total number of ""casa in soler"" properties?","SELECT COUNT(catastici.Property_ID) 
+FROM catastici 
+WHERE catastici.Property_Type = 'casa in soler';"
+How many unique property locations are there in the dataset?,SELECT COUNT(DISTINCT catastici.Property_Location) AS num_locations FROM catastici;
+Who own properties in more than one location?,"SELECT catastici.Owner_First_Name, catastici.Owner_Family_Name
+FROM catastici
+GROUP BY catastici.Owner_First_Name, catastici.Owner_Family_Name
+HAVING COUNT(DISTINCT catastici.Property_Location) > 1;"
+How many owners have more than one type of property?,"SELECT COUNT(*) AS num_owners_with_multiple_properties
+FROM (SELECT catastici.Owner_First_Name, catastici.Owner_Family_Name
+FROM catastici
+GROUP BY catastici.Owner_First_Name, catastici.Owner_Family_Name
+HAVING COUNT(DISTINCT catastici.Property_Type) > 1) AS owners_with_multiple_properties;"
+"Are there properties of the same type in ""loco vicino la calle del paradiso"" owned by different families?","SELECT catastici.Property_Type, COUNT(DISTINCT catastici.Owner_Family_Name) AS num_families
+FROM catastici
+WHERE catastici.Property_Location = 'loco vicino la calle del paradiso'
+GROUP BY catastici.Property_Type
+HAVING COUNT(DISTINCT catastici.Owner_Family_Name) > 1
+limit 1;"
+"How many families own a property in ""calle corrente dell'occa""?","SELECT COUNT(DISTINCT catastici.Owner_Family_Name) 
+FROM catastici 
+WHERE catastici.Property_Location = 'calle corrente dell''occa';"
+"List all different property types in ""calle della torre"".","SELECT DISTINCT catastici.Property_Type
+FROM catastici
+WHERE catastici.Property_Location = 'calle della torre';"
+"Does ""domenico"" ""michiel"" own the property with the lowest rent income in the dataset?","SELECT catastici.Owner_First_Name, catastici.Owner_Family_Name, catastici.Rent_Income
+FROM catastici
+WHERE catastici.Owner_First_Name = 'domenico' AND catastici.Owner_Family_Name = 'michiel'
+AND Rent_Income = ( SELECT MIN(catastici.Rent_Income)
+FROM catastici
+ORDER BY catastici.Rent_Income ASC
+LIMIT 1);"
+What is the property location with the most types of properties?,"SELECT catastici.Property_Location, COUNT(DISTINCT catastici.Property_Type) AS num_types
+FROM catastici
+GROUP BY catastici.Property_Location
+ORDER BY num_types DESC
+LIMIT 1;"
+What is the average rent income of all properties?,"SELECT AVG(catastici.Rent_Income) AS Average_Rent_Income
+FROM catastici;"
+How many properties are rented out for more than 38 ducati?,"SELECT COUNT(catastici.Property_ID) 
+FROM catastici 
+WHERE catastici.Rent_Income > 38;"
+Which property has the lowest rent income?,"SELECT catastici.Property_Type, catastici.Rent_Income
+FROM catastici
+ORDER BY catastici.Rent_Income ASC
+LIMIT 1;"
+Can you name all the property locations in the dataset?,"SELECT DISTINCT catastici.Property_Location 
+FROM catastici;"
+"How many ""casa"" properties are there in each location?","SELECT catastici.Property_Location, COUNT(catastici.Property_ID) AS ""Number_of_casa_properties""
+FROM catastici
+WHERE catastici.Property_Type = 'casa'
+GROUP BY catastici.Property_Location;"
+Who own properties with the rent income of 30 ducati?,"SELECT catastici.Owner_First_Name, catastici.Owner_Family_Name 
+FROM catastici 
+WHERE catastici.Rent_Income = 30;"
+"How many properties in the dataset are not of type ""altro appartamento""?","SELECT COUNT(catastici.Property_ID) 
+FROM catastici 
+WHERE catastici.Property_Type != 'altro appartamento';"
+"What is the range of rent incomes in ""calle de franchi""?","SELECT MIN(catastici.Rent_Income), MAX(catastici.Rent_Income) 
+FROM catastici 
+WHERE catastici.Property_Location = 'calle de franchi';"
+"What is the lowest income of ""zuane"" ""panizza"" from their property located in ""traghetto di san silvestro""?","SELECT MIN(catastici.Rent_Income) 
+FROM catastici 
+WHERE catastici.Owner_First_Name = 'zuane' 
+AND catastici.Owner_Family_Name = 'panizza' 
+AND catastici.Property_Location = 'traghetto di san silvestro';"
+Which owners have properties with varying rent in range 20 to 100 ducati?,"SELECT DISTINCT catastici.Owner_First_Name, catastici.Owner_Family_Name
+FROM catastici
+WHERE catastici.Rent_Income BETWEEN 20 AND 100;"
+"Are there any properties owned by ""antonio"" in ""calle dei ragusei""?","SELECT catastici.Property_ID 
+FROM catastici 
+WHERE catastici.Owner_First_Name = 'antonio' AND catastici.Property_Location = 'calle dei ragusei'
+limit 1;"
+"How much total rent income does ""francesco"" ""mosto"" earn from all his properties?","SELECT SUM(catastici.Rent_Income) AS Total_Rent_Income
+FROM catastici
+WHERE catastici.Owner_First_Name = 'francesco' AND catastici.Owner_Family_Name = 'mosto';"
+"What is the average rent income of ""perina"" ""capello"" per property type?","SELECT catastici.Property_Type, AVG(catastici.Rent_Income) AS avg_rent_income
+FROM catastici
+WHERE catastici.Owner_First_Name = 'perina' AND catastici.Owner_Family_Name = 'capello'
+GROUP BY catastici.Property_Type;"
+"How many total properties are owned by all members of the ""rissardi"" family?","SELECT COUNT(catastici.Property_ID) AS Total_Properties
+FROM catastici
+WHERE catastici.Owner_Family_Name = 'rissardi';"
+"Who is the biggest property owner in ""sotto le collonelle""?","SELECT catastici.Owner_First_Name, catastici.Owner_Family_Name, COUNT(*) AS property_count
+FROM catastici
+WHERE catastici.Property_Location = 'sotto le collonelle'
+GROUP BY catastici.Owner_First_Name, catastici.Owner_Family_Name
+ORDER BY property_count DESC
+LIMIT 1;"
+"What is the total rent income from all properties in ""fondamenta san domenico""?","SELECT SUM(catastici.Rent_Income) 
+FROM catastici 
+WHERE catastici.Property_Location = 'fondamenta san domenico';"
+How many owners have properties across multiple locations?,"SELECT COUNT(*)
+FROM (
+SELECT DISTINCT catastici.Owner_First_Name, catastici.Owner_Family_Name
+FROM catastici 
+GROUP BY catastici.Owner_First_Name, catastici.Owner_Family_Name 
+HAVING COUNT(DISTINCT catastici.Property_Location) > 1
+) AS owners_with_multiple_properties;"
+"What is the total rent income of the property owned by ""carlo"" ""gritti""?","SELECT SUM(catastici.Rent_Income) 
+FROM catastici 
+WHERE catastici.Owner_First_Name = 'carlo' AND catastici.Owner_Family_Name = 'gritti';"
+How many properties produce a rent income above the dataset average?,"SELECT COUNT(catastici.Property_ID) 
+FROM catastici 
+WHERE catastici.Rent_Income > (SELECT AVG(catastici.Rent_Income) FROM catastici);"
+"What is the collective rent income of all ""bottega da casarol"" type properties?","SELECT SUM(catastici.Rent_Income) 
+FROM catastici 
+WHERE catastici.Property_Type = 'bottega da casarol';"
+How many unique property owners are there in the dataset?,"SELECT COUNT(DISTINCT catastici.Owner_ID) AS unique_owners
+FROM catastici;"
+What is the total number of properties generating less than 30 ducati in rent?,"SELECT COUNT(catastici.Property_ID) 
+FROM catastici 
+WHERE catastici.Rent_Income < 30;"
+What is the average number of properties owned per owner in the dataset?,"SELECT AVG(property_counts.num_properties_owned)
+FROM (
+SELECT catastici.Owner_ID, COUNT(catastici.Property_ID) AS num_properties_owned
+FROM catastici
+GROUP BY catastici.Owner_ID
+) AS property_counts
+GROUP BY property_counts.Owner_ID;"
+Who earns the highest rent income from a single property and how much?,"SELECT catastici.Owner_First_Name, catastici.Owner_Family_Name, catastici.Rent_Income
+FROM catastici
+ORDER BY catastici.Rent_Income DESC
+LIMIT 1;"
+How many properties are rented out for less than the average rent income?,"SELECT COUNT(catastici.Property_ID) 
+FROM catastici 
+WHERE catastici.Rent_Income < (SELECT AVG(catastici.Rent_Income) FROM catastici);"
+Which location has the highest total rent income?,"SELECT catastici.Property_Location, SUM(catastici.Rent_Income) AS total_rent_income
+FROM catastici
+GROUP BY catastici.Property_Location
+ORDER BY total_rent_income DESC
+LIMIT 1;"
+"How much total rent income is generated from all ""casa"" type of properties?","SELECT SUM(catastici.Rent_Income) as Total_Rent_Income
+FROM catastici
+WHERE catastici.Property_Type = 'casa';"
+What is the average rent income for each type of property?,"SELECT catastici.Property_Type, AVG(catastici.Rent_Income) AS Avg_Rent_Income
+FROM catastici
+GROUP BY catastici.Property_Type;"
+Which owner has properties in the most number of different locations?,"SELECT catastici.Owner_First_Name, catastici.Owner_Family_Name, COUNT(DISTINCT catastici.Property_Location) AS num_locations
+FROM catastici
+GROUP BY catastici.Owner_First_Name, catastici.Owner_Family_Name
+ORDER BY num_locations DESC
+LIMIT 1;"
+What is the total rent income generated by all properties in the dataset?,SELECT SUM(catastici.Rent_Income) AS Total_Rent_Income FROM catastici;
+"How many owners have at least one ""porzione di bottega"" type of property?","SELECT COUNT(*) AS owners_with_properties
+FROM (
+SELECT catastici.Owner_ID
+FROM catastici
+WHERE catastici.Property_Type = 'porzione di bottega'
+) AS unique_owners_with_properties;"
+"How is rent income distributed among properties in ""rio terrà""?","SELECT catastici.Property_Type, SUM(catastici.Rent_Income) AS Total_Rent_Income, (SUM(Rent_Income) * 100.0) / (SELECT SUM(Rent_Income) FROM catastici WHERE Property_Location = 'rio terrà') AS Percentage
+FROM catastici
+WHERE catastici.Property_Location = 'rio terrà'
+GROUP BY catastici.Property_Type;"
+Who has the most diversified types of property?,"SELECT catastici.Owner_First_Name, catastici.Owner_Family_Name, COUNT(DISTINCT catastici.Property_Type) AS num_property_types
+FROM catastici
+GROUP BY catastici.Owner_First_Name, catastici.Owner_Family_Name
+ORDER BY num_property_types DESC
+LIMIT 1;"
+What is the average rent income in each property location?,"SELECT catastici.Property_Location, AVG(catastici.Rent_Income) AS avg_rent_income
+FROM catastici
+GROUP BY catastici.Property_Location;"
+"How many properties do owners have on average in the location of ""corte carli""?","SELECT AVG(num_properties) AS average_properties_per_owner
+FROM (
+SELECT COUNT(*) AS num_properties
+FROM catastici
+WHERE catastici.Property_Location = 'corte carli'
+GROUP BY catastici.Owner_First_Name, catastici.Owner_Family_Name
+) AS owner_properties;"
+"What percentage of the total rent income is generated by ""bottega da fabro"" type of properties?","SELECT 100.0 * SUM(CASE WHEN catastici.Property_Type = 'bottega da fabro' THEN catastici.Rent_Income ELSE 0 END) / SUM(catastici.Rent_Income) AS Fabro_Rent_Income_Percentage
+FROM catastici;"
+How much total rent income do properties with more than 10 ducati generate?,"SELECT SUM(catastici.Rent_Income) AS Total_Rent_Income
+FROM catastici
+WHERE catastici.Rent_Income > 10;"
+How many owners have just one property in the dataset?,"SELECT COUNT(*) AS Num_Owners
+FROM (
+SELECT catastici.Owner_ID, COUNT(catastici.Property_ID) AS Num_Properties
+FROM catastici
+GROUP BY catastici.Owner_ID
+HAVING COUNT(catastici.Property_ID) = 1
+) AS subquery;"
+What is the total number of different property types owned across the dataset?,"SELECT COUNT(DISTINCT catastici.Property_Type) AS num_property_types
+FROM catastici;"
+How many properties generate a rent income below the mean of the dataset?,"SELECT COUNT(catastici.Property_ID) 
+FROM catastici 
+WHERE Rent_Income < (SELECT AVG(catastici.Rent_Income) FROM catastici);"
+What type of property has the least average rent income?,"SELECT catastici.Property_Type, AVG(catastici.Rent_Income) AS avg_rent
+FROM catastici
+GROUP BY catastici.Property_Type
+ORDER BY avg_rent
+LIMIT 1;"
+Which location has the most varied types of properties?,"SELECT catastici.Property_Location, COUNT(DISTINCT catastici.Property_Type) AS num_types
+FROM catastici
+GROUP BY catastici.Property_Location
+ORDER BY num_types DESC
+LIMIT 1;"
+How many properties are there per property type on average?,"SELECT catastici.Property_Type, COUNT(catastici.Property_ID) AS num_properties
+FROM catastici
+GROUP BY catastici.Property_Type;"
+What is the highest number of properties owned by a single owner?,"SELECT catastici.Owner_ID, COUNT(catastici.Property_ID) AS num_properties_owned
+FROM catastici
+GROUP BY catastici.Owner_ID
+ORDER BY num_properties_owned DESC
+LIMIT 1;"
+How many owners receive more than 100 ducati in total?,"SELECT COUNT(*) AS owners_with_more_than_100_income
+FROM (
+SELECT catastici.Owner_ID
+FROM catastici
+GROUP BY catastici.Owner_ID
+HAVING SUM(catastici.Rent_Income) > 100
+) AS owners_with_income_above_100;"
+"What percentage of properties are located in ""fondamenta de carmini""?","SELECT (COUNT(catastici.Property_ID) * 100.0 / (SELECT COUNT(catastici.Property_ID) FROM catastici)) AS percentage
+FROM catastici
+WHERE catastici.Property_Location = 'fondamenta de carmini';"
+What is the proportion of each property type in the dataset?,"SELECT catastici.Property_Type, (COUNT(catastici.Property_Type) * 100.0 / (SELECT COUNT(catastici.Property_ID) FROM catastici)) AS Proportion
+FROM catastici
+GROUP BY catastici.Property_Type;"
+"How many properties are labeled as ""casa a pepian"", and what percentage of the total rent income do they make up in the dataset?","SELECT COUNT(catastici.Property_ID), (SUM(catastici.Rent_Income) * 100.0) / (SELECT SUM(catastici.Rent_Income) FROM catastici) 
+FROM catastici 
+WHERE catastici.Property_Type = 'casa a pepian';"
+"What is the average rent income from properties not in ""segue rughetta verso calle del fontico""?","SELECT AVG(catastici.Rent_Income) 
+FROM catastici 
+WHERE catastici.Property_Location != 'segue rughetta verso calle del fontico';"
+How much rent income does each family make on average?,"SELECT catastici.Owner_Family_Name, AVG(catastici.Rent_Income) AS avg_rent_income
+FROM catastici
+GROUP BY catastici.Owner_Family_Name;"
+Which property location has the lowest total rent income and how much?,"SELECT catastici.Property_Location, SUM(catastici.Rent_Income) AS ""Total_Rent_Income""
+FROM catastici
+GROUP BY catastici.Property_Location
+ORDER BY ""Total_Rent_Income"" ASC
+LIMIT 1;"
+How many types of properties can be found only in 'campiello della cason'?,"SELECT COUNT(catastici.Property_Type)
+FROM catastici
+WHERE catastici.Property_Location = 'campiello della cason'
+GROUP BY catastici.Property_Type
+HAVING COUNT(catastici.Property_Location) = 1;"
+How many properties are located in the top three areas with the highest total rent income?,"SELECT COUNT(catastici.Property_ID) AS Total_Properties
+FROM catastici
+WHERE catastici.Property_Location IN (
+SELECT catastici.Property_Location
+FROM catastici
+GROUP BY catastici.Property_Location
+ORDER BY SUM(catastici.Rent_Income) DESC
+LIMIT 3
+);"
+How many families own properties of more than one type category?,"SELECT COUNT(*) 
+FROM (
+SELECT catastici.Owner_Family_Name
+FROM catastici
+GROUP BY catastici.Owner_Family_Name
+HAVING COUNT(DISTINCT catastici.Property_Type) > 1
+) AS families_with_multiple_types;"
+"What is the total rent income for properties in ""calle delle carozze""?","SELECT SUM(catastici.Rent_Income) 
+FROM catastici 
+WHERE catastici.Property_Location = 'calle delle carozze';"
+Which property type is the most lucrative based on total rent income?,"SELECT catastici.Property_Type, SUM(catastici.Rent_Income) AS Total_Rent_Income
+FROM catastici
+GROUP BY catastici.Property_Type
+ORDER BY Total_Rent_Income DESC
+LIMIT 1;"
+"How much total rent income is generated from ""casetta, vuota, di solito affittata"" compared to other types of properties?","SELECT SUM(CASE WHEN catastici.Property_Type = 'casetta, vuota, di solito affittata' THEN catastici.Rent_Income ELSE 0 END) AS casetta_rent_income, SUM(CASE WHEN catastici.Property_Type != 'casetta, vuota, di solito affittata' THEN catastici.Rent_Income ELSE 0 END) AS other_rent_income
+FROM catastici;"
+How many properties account for the lower 50% of total rent income?,"SELECT COUNT(catastici.Property_ID) 
+FROM catastici 
+WHERE catastici.Rent_Income <= (
+SELECT AVG(rent_Income)
+FROM (
+SELECT catastici.Rent_Income as rent_Income, ROW_NUMBER() OVER (ORDER BY catastici.Rent_Income) AS row_num,
+COUNT(*) OVER () AS total_count
+FROM catastici)
+WHERE row_num IN ((total_count + 1) / 2, (total_count + 2) / 2));"
+What is the total rent income of the top 5 earners?,"SELECT SUM(total_income)
+FROM (
+SELECT catastici.Owner_ID, SUM(catastici.Rent_Income) as total_income
+FROM catastici
+GROUP BY catastici.Owner_ID
+ORDER BY total_income DESC
+LIMIT 5
+);"
+What is the average rent income variance across all locations?,"SELECT AVG(Variance_By_Location.Variance)
+FROM (
+SELECT Rent_Income_By_Location.Property_Location, AVG((Rent_Income_By_Location.Rent_Income - Rent_Income_By_Location.Mean) * (Rent_Income_By_Location.Rent_Income - Rent_Income_By_Location.Mean)) AS Variance
+FROM (
+SELECT catastici.Property_Location, catastici.Rent_Income, AVG(catastici.Rent_Income) AS Mean
+FROM catastici
+GROUP BY catastici.Property_Location
+) AS Rent_Income_By_Location
+GROUP BY Rent_Income_By_Location.Property_Location
+) AS Variance_By_Location;"
+How many owners do not have any properties in the most populated property location?,"SELECT COUNT(*)
+FROM (SELECT catastici.Owner_ID
+FROM catastici
+WHERE catastici.Property_Location NOT IN (
+SELECT MaxPopulatedLocation.Property_Location
+FROM (
+SELECT catastici.Property_Location, COUNT(*) AS TotalProperties
+FROM catastici
+GROUP BY catastici.Property_Location
+ORDER BY TotalProperties DESC
+LIMIT 1
+) AS MaxPopulatedLocation
+)
+);"

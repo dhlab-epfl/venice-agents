@@ -1,0 +1,7 @@
+transformers==4.38.1
+torch==2.2.1
+jsonargparse==4.27.5
+accelerate==0.27.2
+langchain==0.1.12
+langchain-community==0.0.28
+sentence_transformers==2.6.1
